@@ -1,0 +1,33 @@
+<%= form_for(@registry) do |f| %>
+  <% if @registry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registry.errors.count, "error") %> prohibited this registry from being saved:</h2>
+
+      <ul>
+      <% @registry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :reg_date %><br>
+    <%= f.datetime_select :reg_date %>
+  </div>
+  <div class="field">
+    <%= f.label :total_value %><br>
+    <%= f.text_field :total_value %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_type %><br>
+    <%= f.text_field :reg_type %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

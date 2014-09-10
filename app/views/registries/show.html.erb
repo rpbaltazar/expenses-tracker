@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Reg date:</strong>
+  <%= @registry.reg_date %>
+</p>
+
+<p>
+  <strong>Total value:</strong>
+  <%= @registry.total_value %>
+</p>
+
+<p>
+  <strong>Reg type:</strong>
+  <%= @registry.reg_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @registry.description %>
+</p>
+
+<%= link_to 'Edit', edit_registry_path(@registry) %> |
+<%= link_to 'Back', registries_path %>
