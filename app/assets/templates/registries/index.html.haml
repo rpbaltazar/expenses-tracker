@@ -1,0 +1,4 @@
+%a{:href => "/#"} index
+%ul{"ng-repeat" => "registry in registries"}
+  %li
+    %a{"ng-click" => "viewRegistry(registry.id)"} {{registry.description}}
