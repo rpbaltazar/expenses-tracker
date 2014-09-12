@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#id: integer, reg_date: datetime, total_value: float, reg_type: string, description: string, created_at: datetime, updated_at: datetime
+Registry.create([
+  {reg_date: "2014-09-01", total_value: 120.2, reg_type: "outcome", description: "geylang"},
+  {reg_date: "2014-09-02", total_value: 130.4, reg_type: "outcome", description: "orchard towers"},
+  {reg_date: "2014-08-01", total_value:  21.2, reg_type: "outcome", description: "underground"},
+  {reg_date: "2014-09-14", total_value: 120.2, reg_type: "outcome", description: "geylang"}
+])
