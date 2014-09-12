@@ -1,4 +1,14 @@
-%a{:href => "/#"} index
-%ul{"ng-repeat" => "registry in registries"}
-  %li
-    %a{"ng-click" => "viewRegistry(registry.id)"} {{registry.description}}
+%a{:href => "/#"} Home
+
+%h1.title My Summary
+
+%table{:border => "1"}
+  %tbody
+    %tr
+      %th Date
+      %th Total Value
+      %th Description
+    %tr{"ng-repeat" => "registry in registries"}
+      %td {{registry.reg_date}}
+      %td {{registry.total_value}}
+      %td{"ng-click" => "viewRegistry(registry.id)"} {{registry.description}}
