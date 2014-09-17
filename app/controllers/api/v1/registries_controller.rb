@@ -7,7 +7,8 @@ module Api
       end
 
       def show
-        render json: { message: "Pick it up" }
+        registry = Registry.find(params[:id])
+        render json: registry.to_json
       end
 
       def edit

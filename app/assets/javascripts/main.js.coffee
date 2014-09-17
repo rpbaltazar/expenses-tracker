@@ -4,7 +4,11 @@
   $routeProvider.
     when('/registries', {
       templateUrl: '/assets/registries/index.html',
-      controller: 'RegistriesCtrl'
+      controller: 'RegistriesIndexCtrl'
+    }).
+    when('/registries/:id', {
+      templateUrl: '/assets/registries/show.html',
+      controller: 'RegistriesShowCtrl'
     }).
     otherwise({
       templateUrl: '/assets/home.html',
