@@ -1,14 +1,17 @@
-%a{:href => "/#"} Home
+.col-md-12
+  %strong
+    %i.glyphicon.glyphicon-list-alt
+      Your Summary
 
-%h1.title My Summary
-
-%table{:border => "1"}
-  %tbody
-    %tr
-      %th Date
-      %th Total Value
-      %th Description
-    %tr{"ng-repeat" => "registry in registries"}
-      %td {{registry.reg_date}}
-      %td {{registry.total_value}}
-      %td{"ng-click" => "viewRegistry(registry.id)"} {{registry.description}}
+.col-md-12
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Date
+        %th Total Value
+        %th Description
+    %tbody
+      %tr{"ng-repeat" => "registry in registries"}
+        %td {{registry.reg_date}}
+        %td {{registry.total_value}}
+        %td{"ng-click" => "viewRegistry(registry.id)"} {{registry.description}}

@@ -29,5 +29,17 @@
                     Logout
       / /container
     / /Header
-    %div{"ng-view" => ""}
-      = yield
+    / Main Container
+    .container
+      .col-sm-2
+        %ul.nav.nav-pills.nav-stacked
+          %li
+            %a{:href => '#/registries'}
+              %i.glyphicon.glyphicon-list
+                Your summary
+            %a{:href => '#'}
+              %i.glyphicon.glyphicon-list
+                Balance with friends
+
+      .col-sm-10{"ng-view" => ""}
+        = yield
