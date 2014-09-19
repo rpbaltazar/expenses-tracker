@@ -6,4 +6,7 @@
 
   $scope.viewRegistry = (id) ->
     $location.url "/registries/#{id}"
+
+  $scope.newRegistry = ->
+    $location.url "/registries/new"
 ]

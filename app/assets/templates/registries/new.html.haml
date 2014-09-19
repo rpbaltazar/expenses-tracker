@@ -1,0 +1,23 @@
+.panel.panel-default
+  .panel-heading
+    .panel-title
+      %h4 Register new expense
+  .panel-body
+    %form.form.form-vertical
+      .control-group
+        %label{:for => "value"} Amount
+        .controls
+          %input#value{:placeholder => "Amount", :name => "registry[value]"}
+      .control-group
+        %label{:for => "date"} Date
+        .controls
+          %input#value{:placeholder => "Date", :name => "registry[date]"}
+      .control-group
+        %label{:for => "description"} Description
+        .controls
+          %input#description{:placeholder => "Description", :name => "registry[description]"}
+      .control-group
+        %label
+        .controls
+          %button.btn.btn-primary
+            Add

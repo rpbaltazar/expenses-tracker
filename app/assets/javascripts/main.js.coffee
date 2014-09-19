@@ -6,6 +6,10 @@
       templateUrl: '/assets/registries/index.html',
       controller: 'RegistriesIndexCtrl'
     }).
+    when('/registries/new', {
+      templateUrl: '/assets/registries/new.html',
+      controller: 'RegistriesNewCtrl'
+    }).
     when('/registries/:id', {
       templateUrl: '/assets/registries/show.html',
       controller: 'RegistriesShowCtrl'
