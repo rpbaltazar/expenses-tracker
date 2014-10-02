@@ -1,4 +1,4 @@
-.panel.panel-default
+.panel.panel-default{"ng-controller" => "RegistriesNewCtrl"}
   .panel-heading
     .panel-title
       %h4 Register new expense
@@ -7,17 +7,17 @@
       .control-group
         %label{:for => "value"} Amount
         .controls
-          %input#value{:placeholder => "Amount", :name => "registry[value]"}
+          %input#value{:placeholder => "Amount", :name => "total_value", "ng-model" => "registry.total_value"}
       .control-group
         %label{:for => "date"} Date
         .controls
-          %input#value{:placeholder => "Date", :name => "registry[date]"}
+          %input#value{:placeholder => "Date", :name => "reg_date", "ng-model" => "registry.reg_date"}
       .control-group
         %label{:for => "description"} Description
         .controls
-          %input#description{:placeholder => "Description", :name => "registry[description]"}
+          %input#description{:placeholder => "Description", :name => "description", "ng-model" => "registry.description"}
       .control-group
         %label
         .controls
-          %button.btn.btn-primary
+          %button.btn.btn-primary{"ng-click" => "createNew()"}
             Add
