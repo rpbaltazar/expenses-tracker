@@ -13,9 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-datepicker
 
 //= require angular
 //= require angular-route
+
+//= require moment
 
 //= require main
 
