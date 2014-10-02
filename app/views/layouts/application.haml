@@ -6,40 +6,50 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+
+    //TODO: Move this into an angular view? Check what should be the right approach
+
     / Header
     #top-nav.navbar.navbar-inverse.navbar-static-top
       .container
         .navbar-header
           %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
             %span.icon-toggle
-          %a.navbar-brand{:href => "#"} Control Panel
-        .navbar-collapse.collapse
-          %ul.nav.navbar-nav.navbar-right
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
-                %i.glyphicon.glyphicon-user
-                Admin
-                %span.caret
-              %ul#g-account-menu.dropdown-menu{:role => "menu"}
-                %li
-                  %a{:href => "#"} My Profile
-                %li
-                  %a{:href => "#"}
-                    %i.glyphicon.glyphicon-lock
-                    Logout
+          %a.navbar-brand{:href => "#"} Expenses Tracker
+
+        - if current_user
+          .navbar-collapse.collapse
+            %ul.nav.navbar-nav.navbar-right
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "funcion() {return false;}", :role => "button"}
+                  %i.glyphicon.glyphicon-user
+                  = current_user.name
+                  %span.caret
+                %ul#g-account-menu.dropdown-menu{:role => "menu"}
+                  %li
+                    %a{:href => "#"} Profile
+                  %li
+                    %a{:href => "#"}
+                      %i.glyphicon.glyphicon-lock
+                      Logout
       / /container
     / /Header
     / Main Container
     .container
-      .col-sm-2
-        %ul.nav.nav-pills.nav-stacked
-          %li
-            %a{:href => '#/registries'}
-              %i.glyphicon.glyphicon-list
-                Your summary
-            %a{:href => '#'}
-              %i.glyphicon.glyphicon-list
-                Balance with friends
+      - if current_user
+        .col-sm-2
+          %ul.nav.nav-pills.nav-stacked
+            %li
+              %a{:href => '#/registries'}
+                %i.glyphicon.glyphicon-list
+                  Your summary
+              -# %a{:href => '#'}
+              -#   %i.glyphicon.glyphicon-list
+              -#     Balance with friends
 
-      .col-sm-10{"ng-view" => ""}
-        = yield
+        .col-sm-10{"ng-view" => ""}
+          = yield
+      - else
+        .col-sm-12
+          = yield
+
