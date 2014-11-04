@@ -29,7 +29,7 @@
                   %li
                     %a{:href => "#"} Profile
                   %li
-                    %a{:href => "#"}
+                    %a#sign-out{:href => "#"}
                       %i.glyphicon.glyphicon-lock
                       Logout
       / /container
@@ -51,5 +51,5 @@
           = yield
       - else
         .col-sm-12
-          = yield
+          = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
 
